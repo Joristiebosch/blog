@@ -207,8 +207,8 @@ $$</p>
 <h2 id="BibTex">
 <a class="anchor" href="#BibTex" aria-hidden="true"><span class="octicon octicon-link"></span></a>BibTex<a class="anchor-link" href="#BibTex"> </a>
 </h2>
-<p>Fastpages has a built-in way to handle in-text references, but in order to keep the manual work in copy-pasting of sections of notebook to blog to thesis, I have decided to swap it out for a BibTex compliant renderer, as described by the fastpages team <a class="citation" href="#bibtex_with_fastpages">[3]</a>. As you can see from this post, this works well. The big advantage is that the entire website uses a single <code>references.bib</code> file, so I can cite the same reference across multiple posts and end up with a single reference file when I want to consolidate multiple posts in a $\LaTeX$ thesis or a single post.</p>
-<p>One caveat in in-text refencing is the usual <code>[&lt;a class="latex_cit" id="call-&lt;source&gt;" href="#cit-&lt;source&gt;"&gt;&lt;source&gt;&lt;/a&gt;]</code> doesn't work and <code>(missing reference)</code> is needed instead. This can be changed in bulk using the find and replace feature of any editor however.</p>
+<p>Fastpages has a built-in way to handle in-text references, but in order to minimize the manual work in copy-pasting sections of notebook to blog to thesis, I have decided to swap it out for a BibTex compliant renderer, as described by the fastpages team <a class="citation" href="#bibtex_with_fastpages">[3]</a>. As you can see from this post, this works well. The big advantage is that the entire website uses a single <code>references.bib</code> file, so I can cite the same reference across multiple posts and end up with a single reference file when I want to consolidate multiple posts in a $\LaTeX$ thesis or a single post.</p>
+<p>One caveat in in-text refencing is the usual <code>\[&lt;a class="latex_cit" id="call-&lt;source&gt;" href="#cit-&lt;source&gt;"&gt;&lt;source&gt;&lt;/a&gt;]</code> doesn't work and <code>{% cite &lt;source&gt; %}</code> is needed instead. This can be changed in bulk using the find and replace feature of any editor however.</p>
 
 </div>
 </div>
