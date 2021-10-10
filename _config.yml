@@ -123,3 +123,7 @@ feed:
   
 exclude:
   - settings.ini
+  
+# Set bibliography style to IEEE
+scholar:
+    style: ieee-with-url
