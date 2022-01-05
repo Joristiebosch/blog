@@ -1,4 +1,6 @@
 import plotly.express as px
+from IPython.display import HTML
+HTML(fig.to_html())
 
 def plot(df,x_label='x',y_label='y',line_label='var',plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None):
     log_y = plot_type[:3]=='log'
@@ -8,8 +10,8 @@ def plot(df,x_label='x',y_label='y',line_label='var',plot_type='linlin',e_notati
                   labels = {df.index.name: x_label,'value': y_label, 'variable': line_label},
                   line_shape='spline',
                   log_x=log_x, log_y=log_y,
-                  template = 'plotly_white')#,
-                  #render_mode="svg")
+                  template = 'plotly_white',
+                  render_mode="svg")
         
     fig.update_layout(hoverlabel={'bgcolor': "white", 'font_size': 14})
     
@@ -23,4 +25,4 @@ def plot(df,x_label='x',y_label='y',line_label='var',plot_type='linlin',e_notati
     if y_range!=None:
         fig.update_yaxes(range=y_range)
         
-    fig.show()
+    HTML(fig.to_html())
