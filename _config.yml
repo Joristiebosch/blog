@@ -34,7 +34,7 @@ url: "https://Joristiebosch.github.io" # the base hostname & protocol for your s
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "/blog" # the subpath of your site, e.g. "/blog".
+baseurl: "/thesis" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
@@ -48,13 +48,13 @@ use_math: false
 show_description: true
 
 # Set this to true to display image previews on home page, if they exist
-show_image: false
+show_image: true
 
 # Set this to true to turn on annotations with hypothes.is (https://web.hypothes.is/)
 annotations: true
 
 # Set this to true to display tags on each post
-show_tags: true
+show_tags: false
 
 # Add your Google Analytics ID here if you have one and want to use it
 google_analytics: 
