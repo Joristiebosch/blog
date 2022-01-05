@@ -1,1 +1,1 @@
-Sitemap: https://joristiebosch.github.io/blog/sitemap.xml
+Sitemap: https://joristiebosch.github.io/thesis/sitemap.xml
