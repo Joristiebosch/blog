@@ -8,8 +8,8 @@ def plot(df,x_label='x',y_label='y',line_label='var',plot_type='linlin',e_notati
                   labels = {df.index.name: x_label,'value': y_label, 'variable': line_label},
                   line_shape='spline',
                   log_x=log_x, log_y=log_y,
-                  template = 'plotly_white',
-                  render_mode="svg")
+                  template = 'plotly_white')#,
+                  #render_mode="svg")
         
     fig.update_layout(hoverlabel={'bgcolor': "white", 'font_size': 14})
     
