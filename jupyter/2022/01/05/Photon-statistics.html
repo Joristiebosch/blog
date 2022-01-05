@@ -934,7 +934,7 @@ if (outputEl) {{
 <h2 id="Noise-Equivalent-power">
 <a class="anchor" href="#Noise-Equivalent-power" aria-hidden="true"><span class="octicon octicon-link"></span></a>Noise Equivalent power<a class="anchor-link" href="#Noise-Equivalent-power"> </a>
 </h2>
-<p>The noise equivalent power ($\mathrm{NEP}$) is a way to express the sensitivity of a photon detectors. It is defined as <em>the input signal power that results in a signal-to-noise-ratio of 1 in a 1 Hz output bandwidth</em>. <a class="citation" href="#richards_1994">[9]</a>. For our purposes this means multiplying the photon noise with the photon energy(missing reference). From <a class="citation" href="#zmuidzinas_2003">[5]</a> we have an equation for the electrical (detected) photon noise</p>
+<p>The noise equivalent power ($\mathrm{NEP}$) is a way to express the sensitivity of a photon detectors. It is defined as <em>the input signal power that results in a signal-to-noise-ratio of 1 in a 1 Hz output bandwidth</em>. <a class="citation" href="#richards_1994">[9]</a>. For our purposes this means multiplying the photon noise with the photon energy<a class="citation" href="#leclercq_2007">[10]</a>. From <a class="citation" href="#zmuidzinas_2003">[5]</a> we have an equation for the electrical (detected) photon noise</p>
 $$
 \sigma_\mathrm{ph}^2=\frac{1}{\tau}\int_0^\infty\eta(\nu)n(\nu)\left[1+\eta(\nu)n(\nu)\right]d\nu
 $$<p>multiplying this integral with the photon energy, we get the electrical Noise Equivalent Power added by photon noise for a specified integration time</p>
@@ -982,7 +982,7 @@ $$</p>
 <p>Inserting this in the equation for $\mathrm{NEP}$ we get:</p>
 $$
 \mathrm{NEP}_{\tau=0.5\mathrm{s},\mathrm{ph}}=\sqrt{2P_\mathrm{KID}h\nu_0 + 2\frac{P_\mathrm{KID}^2}{\Delta\nu}}
-$$<p>Which is in agreement with <a class="citation" href="#endo_2019">[10]</a></p>
+$$<p>Which is in agreement with <a class="citation" href="#endo_2019">[11]</a></p>
 
 </div>
 </div>
@@ -1050,7 +1050,7 @@ if (outputEl) {{
 <h2 id="Generation-Recombination-Noise">
 <a class="anchor" href="#Generation-Recombination-Noise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generation-Recombination Noise<a class="anchor-link" href="#Generation-Recombination-Noise"> </a>
 </h2>
-<p>Besides photon noise (both Poisson and bunching), another type of noise adds to our $NEP$: generation-recombination noise. This is a type of noise that occurs in superconductor-based pair-breaking photon detectors, as quasiparticles generate and recombine in a cooper pair (missing reference). For our purposes we will take the noise equivalent power of recombination noise $\mathrm{NEP}&lt;/em&gt;\mathrm{GR}$ as given by <a class="citation" href="#endo_2019">[10]</a>:</p>
+<p>Besides photon noise (both Poisson and bunching), another type of noise adds to our $NEP$: generation-recombination noise. This is a type of noise that occurs in superconductor-based pair-breaking photon detectors, as quasiparticles generate and recombine in a cooper pair (missing reference). For our purposes we will take the noise equivalent power of recombination noise $\mathrm{NEP}&lt;/em&gt;\mathrm{GR}$ as given by <a class="citation" href="#endo_2019">[11]</a>:</p>
 $$
 \mathrm{NEP}_\mathrm{GR}=\sqrt{4\Delta_\mathrm{Al}\frac{P_\mathrm{KID}}{\eta_\mathrm{pb}}}
 $$<p>Since the photon noise $\mathrm{NEP}_\mathrm{ph}$ and the recombination noise $\mathrm{NEP}_\mathrm{GR}$ are uncorrelated, we add them together by quadrature addition, the total noise equivalent power is thus given by:</p>
@@ -1080,7 +1080,8 @@ $$
 <li><span id="Krottenmüller_2013">[7]M. Krottenmüller, “Photon Statistics,” <i>Technische Universität München</i>. May-2013 [Online]. Available at: https://www.mpq.mpg.de/5020834/0508a_photon_statistics.pdf</span></li>
 <li><span id="morgan_1966">[8]B. L. Morgan and L. Mandel, “Measurement of Photon Bunching in a Thermal Light Beam,” <i>Physical Review Letters</i>, vol. 16, no. 22, pp. 1012–1015, 1966, doi: 10.1103/physrevlett.16.1012. </span></li>
 <li><span id="richards_1994">[9]P. L. Richards, “Bolometers for infrared and millimeter waves,” <i>Journal of Applied Physics</i>, vol. 76, no. 1, pp. 1–24, 1994, doi: 10.1063/1.357128. </span></li>
-<li><span id="endo_2019">[10]A. Endo <i>et al.</i>, “First light demonstration of the integrated superconducting spectrometer,” <i>Nature Astronomy</i>, vol. 3, no. 11, pp. 989–996, 2019, doi: 10.1038/s41550-019-0850-8. </span></li>
+<li><span id="leclercq_2007">[10]S. Leclercq, “Discussion about Noise Equivalent Power and its use for photon noise calculation,” 2007 [Online]. Available at: https://www.iram.fr/ leclercq/Reports/About_NEP_photon_noise.pdf</span></li>
+<li><span id="endo_2019">[11]A. Endo <i>et al.</i>, “First light demonstration of the integrated superconducting spectrometer,” <i>Nature Astronomy</i>, vol. 3, no. 11, pp. 989–996, 2019, doi: 10.1038/s41550-019-0850-8. </span></li>
 </ol>
 
 </div>
