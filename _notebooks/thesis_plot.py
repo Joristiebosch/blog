@@ -1,7 +1,7 @@
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None):
+def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None, mode='lines'):
     log_y = plot_type[:3]=='log'
     log_x = plot_type[3:6]=='log'
     
@@ -11,6 +11,7 @@ def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='
     fig = px.line(df,
                   labels = {df.index.name: axis_labels[0],'value': axis_labels[1], 'variable': axis_labels[2]},
                   line_shape='spline',
+                  mode=mode,
                   log_x=log_x, log_y=log_y,
                   template = 'plotly_white',
                   render_mode="svg")
@@ -80,10 +81,12 @@ def filter_plot(spectral_df,  filters_df, mode='',x_axis_range=None,y_axis_range
     subfig.layout.yaxis1.range=[0,1]
     if x_axis_range != None:
         subfig.layout.xaxis.range=x_axis_range
-
+    
+    # Switch axis label sides
     subfig.layout.yaxis2.side='left'
     subfig.layout.yaxis1.showticklabels=False
-
+    
+    # Change template to thesis
     subfig.layout.template='plotly_white'
     subfig.layout.hoverlabel = {'bgcolor': "white", 'font_size': 14}
 
