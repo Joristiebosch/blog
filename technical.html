@@ -78,6 +78,24 @@ window.onload = wrap_img;
 </script>
 
 
+<!--mathjax header-->
+<!--https://forums.fast.ai/t/consider-setting-use-math-to-true-by-default/64276/5-->
+<!--https://stackoverflow.com/questions/11296415/how-to-left-align-mathjax-elements-->
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true,
+     }
+   });
+   MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    displayAlign: "center"
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 
 <!--https://xgarrido.github.io/blog/jupyter/plotly/2021/01/18/plotly.html-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
