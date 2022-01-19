@@ -23,9 +23,6 @@
 {%- endif -%}
 
 {% if site.use_plotly %}
-  <!-- Configure MathJax to only render plotly -->
-
-  <!-- Include Plotly scripts -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
   <!--https://xgarrido.github.io/blog/jupyter/plotly/2021/01/18/plotly.html-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
@@ -47,13 +44,15 @@
 
 <!-- Load MathJax -->
 
+<script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 	TeX: 			{equationNumbers: { autoNumber: "all" } },
 	tex2jax: 		{inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true },
-    displayAlign: "center"
+    	displayAlign: "center"
 	});
+</script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 
 {% if site.use_math %}
