@@ -42,7 +42,7 @@ minima:
     github: Joristiebosch
 
 # Set this to true to get LaTeX math equation support
-use_math: true
+use_math: false
 use_mathjax: false
 
 # Set this to true to display the summary of your blog post under your title on the Home page.
