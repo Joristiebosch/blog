@@ -42,7 +42,7 @@ minima:
     github: Joristiebosch
 
 # Set this to true to get LaTeX math equation support
-use_plotly : false
+use_plotly : true
 use_katex: true
 use_mathjax: false
 
