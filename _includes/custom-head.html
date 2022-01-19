@@ -22,25 +22,6 @@
 <script async src="https://hypothes.is/embed.js"></script>
 {%- endif -%}
 
-{% if site.use_plotly %}
-<!--<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>-->
-<!--https://xgarrido.github.io/blog/jupyter/plotly/2021/01/18/plotly.html-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
-<script type="text/javascript">
-  if (typeof require !== 'undefined') {
-      require.undef("plotly");
-      requirejs.config({
-          paths: {
-              'plotly': ['https://cdn.plot.ly/plotly-latest.min']
-          }
-      });
-      require(['plotly'], function(Plotly) {
-          window._Plotly = Plotly;
-      });
-  }
-</script>
-{% endif %}
-
 {% if site.use_mathjax %}
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -71,6 +52,25 @@ MathJax.Hub.Config({
         );
     });
     </script>
+{% endif %}
+
+{% if site.use_plotly %}
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>-->
+<!--https://xgarrido.github.io/blog/jupyter/plotly/2021/01/18/plotly.html-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<script type="text/javascript">
+  if (typeof require !== 'undefined') {
+      require.undef("plotly");
+      requirejs.config({
+          paths: {
+              'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+          }
+      });
+      require(['plotly'], function(Plotly) {
+          window._Plotly = Plotly;
+      });
+  }
+</script>
 {% endif %}
 
 <script>
