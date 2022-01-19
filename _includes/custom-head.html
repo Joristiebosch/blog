@@ -23,14 +23,6 @@
 {%- endif -%}
 
 {% if site.use_plotly %}
-  <!-- Configure MathJax to only render plotly -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      skipStartupTypeset:true
-    });
-  </script>
-
-  <!-- Include Plotly scripts -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
   <!--https://xgarrido.github.io/blog/jupyter/plotly/2021/01/18/plotly.html-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
@@ -47,22 +39,24 @@
         });
     }
   </script>
-
-<!-- Load MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
 {% endif %}
 
 {% if site.use_math %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.2/katex.min.css" integrity="sha512-g1pxMKWnqCJA5bTMwnw0Xwe0KQAfnj47+1pB0oISMqVFjm8Bg1vA3RENj+iGunE9j4zDLPWbau7jirWwJyshdQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.2/katex.min.js" integrity="sha512-iegr9Cbvw50rG0agCU/1HUJ0w5GflT+Lsk2SRI1jOjEC15RRgJW9vMLDFxIF3mBxoIDIS41fnENNuSZD+WhIOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.2/contrib/auto-render.min.js" integrity="sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    onload="renderMathInElement(document.body, 
-      {delimiters: [
-        {left: "$$", right: "$$", display: true},
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.2/contrib/auto-render.min.js" integrity="sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
             {left: "[%", right: "%]", display: true},
             {left: "$", right: "$", display: false}
-      ]});"></script>
-
+        ]}
+        );
+    });
+    </script>
 {% endif %}
 
 <script>
