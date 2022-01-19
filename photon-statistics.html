@@ -47,6 +47,11 @@
 
 <script async src="https://hypothes.is/embed.js"></script>
 
+<!-- Load MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+
+
+
 <script>
 function wrap_img(fn) {
     if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
@@ -77,36 +82,6 @@ window.onload = wrap_img;
     });
 </script>
 
-
-
-<!--Plotly-->
-<!-- Configure MathJax to only render plotly -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    skipStartupTypeset:true
-  });
-</script>
-
-<!-- Load MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
-
-<!-- Include Plotly scripts -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-<!--https://xgarrido.github.io/blog/jupyter/plotly/2021/01/18/plotly.html-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
-<script type="text/javascript">
-  if (typeof require !== 'undefined') {
-      require.undef("plotly");
-      requirejs.config({
-          paths: {
-              'plotly': ['https://cdn.plot.ly/plotly-latest.min']
-          }
-      });
-      require(['plotly'], function(Plotly) {
-          window._Plotly = Plotly;
-      });
-  }
-</script>
 
 
 </head>
