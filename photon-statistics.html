@@ -76,7 +76,12 @@ MathJax.Hub.Config({
 	});
 </script>
 
-window.addEventListener('load',MathJax.Hub.Configured())
+window.addEventListener('load',function(){
+	MathJax.Hub.Configured();
+	MathJax.Hub.Typeset();
+});
+
+
 
 
 
