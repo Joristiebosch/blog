@@ -64,7 +64,16 @@
     }
   </script>
 
+
+
 <!-- Load MathJax -->
+
+MathJax.Hub.Config({
+	TeX: 			{equationNumbers: { autoNumber: "all" } },
+	tex2jax: 		{inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true },
+    displayAlign: "center"
+	});
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
 
 
