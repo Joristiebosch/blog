@@ -43,8 +43,8 @@ minima:
 
 # Set this to true to get LaTeX math equation support
 use_plotly : true
-use_katex: true
-use_mathjax: false
+use_katex: false
+use_mathjax: true
 
 # Set this to true to display the summary of your blog post under your title on the Home page.
 show_description: true
