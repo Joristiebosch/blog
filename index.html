@@ -78,6 +78,16 @@ window.onload = wrap_img;
 
 
 <!--Plotly-->
+<!-- Configure MathJax to only render plotly-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    skipStartupTypeset:true
+  });
+  MathJax.Hub.Queue(
+    ["Typeset",MathJax.Hub,".infolayer"]);
+</script>
+
+
 <!--https://plotly.com/javascript/LaTeX/-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>-->
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
