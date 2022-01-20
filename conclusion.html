@@ -145,7 +145,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -156,7 +156,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#Future-Prospects">Future Prospects </a></li>
+<li class="toc-entry toc-h2"><a href="#The-future-of-this-research">The future of this research </a></li>
 <li class="toc-entry toc-h2"><a href="#Bibliography">Bibliography </a></li>
 </ul><!--
 #################################################
@@ -197,7 +197,7 @@ $$\begin{equation}
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Besides this algebraic result for a Lorentzian filter I have also modified the existing <code>deshima-sensitivity</code>(missing reference) model to calculate this integral not just for mathematical filters, but for arbitrary filter shapes loaded in via a file. This allows researchers to compare the sensitivity of various designs in software.</p>
+<p>Besides this algebraic result for a Lorentzian filter I have also modified the existing <code>deshima-sensitivity</code><a class="citation" href="#deshima-sensitivity">[3]</a> model to calculate this integral not just for mathematical filters, but for arbitrary filter shapes loaded in via a file. This allows researchers to compare the sensitivity of various designs in software.</p>
 <p>To verify the changes to the model I have compared it with the old model and confirmed that the latter overestimated the bunching noise by a factor of $\pi/2$ , even for a non-flat $\mathrm{PSD}$. Other than this, the changes affect the power and noise in local extrema of the $\mathrm{PSD}$, where the old model didn't integrate over the full range of the filter and therefore took the $\mathrm{PSD}$ as a flat spectrum locally.</p>
 
 </div>
@@ -206,10 +206,12 @@ $$\begin{equation}
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Future-Prospects">
-<a class="anchor" href="#Future-Prospects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future Prospects<a class="anchor-link" href="#Future-Prospects"> </a>
+<h2 id="The-future-of-this-research">
+<a class="anchor" href="#The-future-of-this-research" aria-hidden="true"><span class="octicon octicon-link"></span></a>The future of this research<a class="anchor-link" href="#The-future-of-this-research"> </a>
 </h2>
-<p>Because the model now more closely resembles the physics that is occurring inside the filter section of a DESHIMA spectrometer, it can be used to compare different filter designs in the <code>deshima-sensitivity</code> package itself. This is an important tool to compare filter topologies differing from Lorentzian shapes.</p>
+<p>Because the model now more closely resembles the physics that is occurring inside the filter section of a DESHIMA spectrometer, it can be used to compare different filter designs in the <code>deshima-sensitivity</code> package itself. This is an important tool to compare filter topologies differing from Lorentzian shapes. Paired with methods to accurately describe the coupling of a source to the detector it can be used to very accurately calculate the signal to noise ratio of a specific filter profile, aiding in the experimental design of different filter profiles. Such research is in progress and as such the model will immediately be put to use.</p>
+<p>The improved accuracy of the approximation in the bunching term for a Lorentzian filter can prove useful when designing the DESHIMA spectrometer, as it gives a more physically rigorous target of the maximum sensitivity the DESHIMA spectrometer can strive towards.</p>
+<p>Finally, this thesis gives a thorough overview of photon statistics in astronomical measurement and of photon bunching in particular and as such can be a great teaching tool. My thesis supervisor, dr. Akira Endo, has been very interested in using this as teaching material for courses he gives on the subject and I am looking forward to helping other students understand photon statistics and photon bunching better.</p>
 
 </div>
 </div>
@@ -238,6 +240,7 @@ $$\begin{equation}
 <ol class="bibliography">
 <li><span id="zmuidzinas_2003">[1]J. Zmuidzinas, “Thermal noise and correlations in photon detection,” <i>Applied Optics</i>, vol. 42, no. 25, p. 4989, 2003, doi: 10.1364/ao.42.004989. </span></li>
 <li><span id="endo_2019">[2]A. Endo <i>et al.</i>, “First light demonstration of the integrated superconducting spectrometer,” <i>Nature Astronomy</i>, vol. 3, no. 11, pp. 989–996, 2019, doi: 10.1038/s41550-019-0850-8. </span></li>
+<li><span id="deshima-sensitivity">[3]A. Endo and A. Taniguchi, “deshima-sensitivity v0.3.0,” <i>pypi.org</i>. Open Source, Jun-2021 [Online]. Available at: https://pypi.org/project/deshima-sensitivity/</span></li>
 </ol>
 
 </div>
