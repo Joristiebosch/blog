@@ -1,7 +1,7 @@
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None, mode='lines'):
+def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None, mode='lines', legendgroup=None):
     log_y = plot_type[:3]=='log'
     log_x = plot_type[3:6]=='log'
     
@@ -11,16 +11,18 @@ def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='
     fig = px.line(df,
                   labels = {df.index.name: axis_labels[0],'value': axis_labels[1], 'variable': axis_labels[2]},
                   line_shape='spline',
-                  mode=mode,
                   log_x=log_x, log_y=log_y,
                   template = 'plotly_white',
                   render_mode="svg")
-        
+    
     fig.update_layout(hoverlabel={'bgcolor': "white", 'font_size': 14})
     
     # Hacky update all traces because can't print trace name I guess
-    for trace in fig.data:
+    for idx, trace in enumerate(fig.data):
         trace['hovertemplate']= '<b>'+hover_labels[2]+trace['name']+'</b><br>'+hover_labels[0]+': %{x}<br>'+hover_labels[1]+': %{y}<br><extra></extra>'
+        if legendgroup is not None:
+            trace.legendgroup=legendgroup[idx]
+            trace.legendgrouptitle.text=legendgroup[idx]
     
     if e_notation[0]:
         fig.update_layout(xaxis={'tickformat':'.2e'})
@@ -90,4 +92,55 @@ def filter_plot(spectral_df,  filters_df, mode='',x_axis_range=None,y_axis_range
     subfig.layout.template='plotly_white'
     subfig.layout.hoverlabel = {'bgcolor': "white", 'font_size': 14}
 
+    subfig.show()
+   
+def psd_overlay(data, psd_underlay,var_axis='var',var_hover='var',x_axis_range=None,y_axis_range=None,overlay_title='PSD at KID', show_legend_underlay=True):       
+    subfig = make_subplots(specs=[[{"secondary_y": True}]])
+    
+    # Add psd plot
+    fig_under= px.line(psd_underlay,
+                      line_shape='spline')
+    
+    fig_under.update_traces(showlegend=show_legend_underlay,
+                           line={'color': 'rgba(127,127,127,0.3)'},
+                           hovertemplate='<b>'+overlay_title+'</b><br>nu [GHz]: %{x:.2f}<br>PSD [W/Hz]: %{y:.ef}<extra></extra>')
+    
+    
+    
+    # Add signal plots
+    for signal, name, mode, customdata, visible in data:
+        if customdata is None:
+            hovertemplate='<b>'+name+'</b><br>nu [GHz]: %{x:.2f}<br>'+var_hover+': %{y:.2e}<extra></extra>'
+        else:
+            hovertemplate='<b>'+name+'</b><br>nu [GHz]: %{x:.2f}<br>'+var_hover+': %{y:.2e}<br>R: %{customdata[0]:.0f}<br>Transmission: %{customdata[1]:.3f}<br>Chi Square: %{customdata[2]:.2e} <extra></extra>'
+        subfig.add_scatter(x=signal.index,
+                         y=signal.values,
+                         mode=mode,
+                           visible=visible,
+                           customdata=customdata,
+                         hovertemplate=hovertemplate,
+                            name=name,
+                           line_shape='spline',
+                          secondary_y=True)
+
+    subfig.add_traces(fig_under.data)
+    
+    subfig.layout.xaxis.title="$\\nu\:\mathrm{[GHz]}$"
+    subfig.layout.yaxis2.title=var_axis
+    subfig.layout.yaxis1.title="$\mathrm{PSD\:[W\:Hz^{-1}]}$"
+    
+    # Switch axis label sides
+    subfig.layout.yaxis2.side='left'
+    subfig.layout.yaxis1.side='right'
+    #subfig.layout.yaxis1.showticklabels=False
+    
+    # Set axis range
+    if y_axis_range is not None:
+        subfig.layout.yaxis2.range=y_axis_range
+    if x_axis_range is not None:
+        subfig.layout.xaxis.range=x_axis_range
+    
+    # Change template to thesis
+    subfig.layout.template='plotly_white'
+    subfig.layout.hoverlabel = {'bgcolor': "white", 'font_size': 14}
     subfig.show()
