@@ -109,14 +109,14 @@ window.onload = wrap_img;
     elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
 	    
     function render_mathjax(){
-	console.log('Rendering MathJax');
-	MathJax.Hub.Configured();
-	MathJax.Hub.Typeset();
 	if(MathJax.Hub.getAllJax().length==0){
+		console.log('Rendering MathJax');
+		MathJax.Hub.Configured();
+		MathJax.Hub.Typeset();
 		setTimeout(render_mathjax,1000);
 	};
     };
-    render_mathjax()
+    setTimeout(render_mathjax,1000);
     });
 </script>
 
