@@ -3,9 +3,9 @@ In order to investigate the forming of galaxies, astronomers look back in time u
 
 This report investigates the sensitivity of DESHIMA-like spectrometers by investigating photon noise due to Poisson and bunching effects. It gives a broad overview of photon statistics and explains, through an analogous model, that photon bunching occurs due to an underlying change in the probabilistics, rather than the act of detecting itself. After that I investigate photon and recombination noise for a DESHIMA-like spectrometer with Lorentzian filters and find a closed form equation for Noise Equivalent Power per channel for a constant power spectral density
 
-$$
+$$\begin{equation}
 \mathrm{NEP}_{\tau}^2=\frac{1}{\tau}\left(h\nu\eta\mathrm{PSD}\Delta\nu+\frac{2}{\pi}\eta^2\mathrm{PSD}^2\Delta\nu+\frac{4\Delta_\mathrm{Al}}{\eta_\mathrm{pb}}\eta\mathrm{PSD}\Delta\nu\right)
-$$
+\end{equation}$$
 
 where $\eta$ is $\pi/4$ times the peak hight of the Lorentzian, the average transmission over the $\mathrm{FWHM}$ of the Lorentzian. The bunching is a factor of $\pi/2$ smaller than previously approximated.
 
