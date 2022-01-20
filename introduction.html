@@ -587,15 +587,14 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p></p>
 <p>&lt;script type = text/javascript&gt;
 function render_mathjax(){
-    console.log('Rendering MathJax');
-    MathJax.Hub.Configured();
-    MathJax.Hub.Typeset();
-    if(MathJax.Hub.getAllJax().length==0){
-        setTimeout(render_mathjax,1000);
-    };
+	console.log('Rendering MathJax');
+	MathJax.Hub.Configured();
+	MathJax.Hub.Typeset();
+	if(MathJax.Hub.getAllJax().length==0){
+		setTimeout(render_mathjax,1000);
+	};
 };
 render_mathjax()
 &lt;/script&gt;
