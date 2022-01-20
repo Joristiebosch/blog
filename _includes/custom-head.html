@@ -51,13 +51,18 @@ MathJax.Hub.Config({
 	tex2jax: 		{inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true },
     	displayAlign: "center",
 	});
-	
-window.addEventListener('load',function(){
+
+// Try to mathjax until it works
+function render_mathjax(){
 	console.log('Rendering MathJax')
 	MathJax.Hub.Configured();
 	MathJax.Hub.Typeset();
-});
+	if(MathJax.Hub.getAllJax().length==0){
+		setTimeout(render_mathjax,1000);
+	}
+};
 
+window.addEventListener('load',render_mathjax);
 </script>
 
 {% endif %}
