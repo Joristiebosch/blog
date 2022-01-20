@@ -73,16 +73,14 @@ MathJax.Hub.Config({
 	});
 
 // Try to mathjax until it works
-function render_mathjax(){
-	console.log('Rendering MathJax')
+window.addEventListener('load',function render_mathjax(){
+	console.log('Rendering MathJax');
 	MathJax.Hub.Configured();
 	MathJax.Hub.Typeset();
 	if(MathJax.Hub.getAllJax().length==0){
 		setTimeout(render_mathjax,1000);
-	}
-};
-
-window.addEventListener('load',render_mathjax);
+	};
+});
 </script>
 
 
