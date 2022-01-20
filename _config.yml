@@ -111,7 +111,7 @@ titles_from_headings:
 highlighter: rouge
 markdown: kramdown
 kramdown:
-  math_engine: +nil+
+  math_engine: null
   input: GFM
   auto_ids: true
   hard_wrap: false
