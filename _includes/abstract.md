@@ -11,13 +11,15 @@ where $\eta$ is $\pi/4$ times the peak hight of the Lorentzian, the average tran
 
 Finally I propose and describe modifications to the sensitivity model DESHIMA uses. The following features will be improved and added:
 
-## Integrate over the entire power spectrum when calculating photon noise
+### Integrate over the entire power spectrum when calculating photon noise
 I use an integral expression for photon noise found in the literature and integrate over it using a Riemann sum to calculate the photon noise per channel. This improves accuracy, in particular in local extrema where the loading of the side bands smooths out the $\mathrm{PSD}$ at the center frequency.
 
-## Use arbritatry filter designs loaded from a file
+### Use arbritatry filter designs loaded from a file
 I design the modifications in such a way that an arbitrary filtershape can be loaded in and the sensitivity can be calculated from it. This is important when comparing filter designs, as it was previously challenging to calculate the noise equivalent power for these arbitrary filter shapes in order to calculate the signal to noise ratio.
 
-## Improve estimations of the quantities that express sensitivity
+### Improve estimations of the quantities that express sensitivity
 Finally I will transform the calculated $\mathrm{NEP}$ to quantities like minimal detectable line flux ($\mathrm{MDLF}$) and noise equivalent flux density ($\mathrm{NEFD}$) to show the sensitivity of the system in an astronomical measurement. This was previously done by approximating the $\mathrm{PSD}$ as flat over the filter channel, but I will improve on this by taking the entire range of the filter into account for continuum sources.
 
 I will compare the proposed modifications to the old model, which was compared with measurement results, and use it to validate the changes. Other than the previously mentioned factor of $\pi/2$ for the bunching term and the smoothing out in local extrema, the changes behave similarly to the old model.
+
+The figures in this thesis are interactive. That means that you can drag a square to zoom, toggle traces and hover over traces to see the data.

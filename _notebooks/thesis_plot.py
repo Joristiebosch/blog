@@ -1,7 +1,7 @@
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None, mode='lines', legendgroup=None, fill='none', line_shape='spline'):
+def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(False,False),x_range=None,y_range=None, mode='lines', legendgroup=None, fill='none', line_shape='spline'):
     log_y = plot_type[:3]=='log'
     log_x = plot_type[3:6]=='log'
     
@@ -109,7 +109,7 @@ def psd_overlay(data, psd_underlay,var_axis='var',var_hover='var',x_axis_range=N
     
     
     # Add signal plots
-    for signal, name, mode, customdata, visible in data:
+    for signal, name, mode, customdata, visible, legendgroup in data:
         if customdata is None:
             hovertemplate='<b>'+name+'</b><br>nu [GHz]: %{x:.2f}<br>'+var_hover+': %{y:.2e}<extra></extra>'
         else:
@@ -123,7 +123,12 @@ def psd_overlay(data, psd_underlay,var_axis='var',var_hover='var',x_axis_range=N
                             name=name,
                            line_shape='spline',
                           secondary_y=True)
-
+        if legendgroup is not None:
+            trace = subfig.data[-1]
+            trace.legendgroup=legendgroup
+            trace.legendgrouptitle.text=legendgroup
+            
+        
     subfig.add_traces(fig_under.data)
     
     subfig.layout.xaxis.title="$\\nu\:\mathrm{[GHz]}$"
