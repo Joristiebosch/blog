@@ -193,14 +193,6 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So far</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>The original <code>deshima-sensitivity</code> code follows the following flowchart</p>
 <p><img src="/thesis/images/copied_from_nb/images/Old_deshima.png" alt="old deshima code"></p>
 
@@ -229,7 +221,7 @@ $$\begin{equation}
 $$\begin{equation}
 \gamma=\frac{\nu_c}{2R}
 \end{equation}$$
-with $R=500$ the spectral resolution. As we have seen previously our box filters were defined by an efficiency named $\eta_0$. Together with the bandwidth, this describes the transmission of the box filter. If we define the full width at half maximum for the Lorentzian as the bandwidth of the Lorentzian, we would like to define the $A$ parameter such that the area of this $\mathrm{FWHM}$ is exactly the same as the area of the box filter.</p>
+with $R=500$ the spectral resolution. As we have seen previously our box filters were defined by an efficiency constant labeled $\eta_0$. Together with the bandwidth, this describes the transmission of the box filter. If we define the full width at half maximum for the Lorentzian as the bandwidth of the Lorentzian, we would like to define the $A$ parameter such that the area of this $\mathrm{FWHM}$ is exactly the same as the area of the box filter.</p>
 
 </div>
 </div>
@@ -443,10 +435,10 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The total power impinged on the detector can be approximated by calculating the spectral power arriving at the detector not just at the center frequencies of the bins $\nu_0$, but by expanding the number of frequencies calculated to some amount of <em>integration bins</em> and calculating the spectral power at these frequencies. for integration frequencies frequency $\nu_i$ and a channel $j$, the effective power loading by that frequency on that channel is given by:</p>
+<p>The total power impinged on the detector can be approximated by calculating the spectral power arriving at the detector not just at the center frequencies of the bins $\nu_0$, but by expanding the number of frequencies calculated to some amount of <em>integration bins</em> and calculating the spectral power at these frequencies. For an integration frequency $\nu_i$ and a channel $j$, the effective power loading by that frequency on that channel is given by:</p>
 $$\begin{equation}
 P_{\mathrm{KID},i,j} = \eta\left(\nu_i,j\right)\mathrm{psd}\left(\nu_i\right)\Delta\nu_i\label{p_kid_i}
-\end{equation}$$<p>with $\Delta_i$ the bandwidth for that frequency. The total power impinged on a filter channel $P_j$ is then given by:</p>
+\end{equation}$$<p>with $\Delta\nu_i$ the bandwidth for that frequency. The total power impinged on a filter channel $P_{\mathrm{KID},j}$ is then given by:</p>
 $$\begin{equation}
 P_{\mathrm{KID},j}=\sum_i P_{\mathrm{KID},i,j} = \sum_i \eta\left(\nu_i,j\right)\mathrm{psd}\left(\nu_i\right)\Delta\nu_i \label{p_kid}
 \end{equation}$$<p>To make this more visual, take a look at the figure below</p>
