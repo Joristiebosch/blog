@@ -1,7 +1,7 @@
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None, mode='lines', legendgroup=None):
+def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='linlin',e_notation=(True,False),x_range=None,y_range=None, mode='lines', legendgroup=None, fill='none', line_shape='spline'):
     log_y = plot_type[:3]=='log'
     log_x = plot_type[3:6]=='log'
     
@@ -10,11 +10,12 @@ def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='
     
     fig = px.line(df,
                   labels = {df.index.name: axis_labels[0],'value': axis_labels[1], 'variable': axis_labels[2]},
-                  line_shape='spline',
+                  line_shape=line_shape,
                   log_x=log_x, log_y=log_y,
                   template = 'plotly_white',
                   render_mode="svg")
     
+    fig.update_traces(fill=fill)
     fig.update_layout(hoverlabel={'bgcolor': "white", 'font_size': 14})
     
     # Hacky update all traces because can't print trace name I guess
@@ -43,7 +44,7 @@ def filter_plot(spectral_df,  filters_df, mode='',x_axis_range=None,y_axis_range
         mode_spectrum='lines'
     elif mode=='stem':
         line_shape_filters='hvh'
-        error_y_spectrum={'type':'percent','value':0,'valueminus':100}
+        error_y_spectrum={'type':'percent','value':0,'valueminus':200}
         mode_spectrum='markers'
     else:
         line_shape_filters='spline'
