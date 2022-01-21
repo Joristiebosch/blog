@@ -227,7 +227,7 @@ window.onload = wrap_img;
 </h2>
 <p>The new model calculates the $P_\mathrm{KID}$ of the $j$th channel as a Riemann sum approximation of</p>
 $$\begin{equation}
-P_{\mathrm{KID},j} = \int_0^\infty\mathrm{PSD_{filter}}\left(\nu\right)\eta_{\mathrm{filter},j}\left(\nu\right)d\nu
+P_{\mathrm{KID},j} = \int_0^\infty\mathrm{PSD_{filter}}\left(\nu\right)\eta\left(j,\nu\right)d\nu
 \end{equation}$$<p>whereas the old model approximated this integral as a square filter with width $\Delta\nu=\mathrm{FWHM}$. Therefore the new model takes in a much wider range of the $\mathrm{PSD}$ and is thus expected to be higher in local minima and lower in local maxima of the $\mathrm{PSD}$.</p>
 
 </div>
@@ -374,7 +374,7 @@ if (outputEl) {{
 </h2>
 <p>The $\mathrm{NEP}$ is calculated using the Riemann sum of the following integral</p>
 $$\begin{equation}
-\mathrm{NEP}_{\tau=0.5\mathrm{s},j}=2\int_0^\infty h\nu\eta_{\mathrm{filter},j}\left(\nu\right)\mathrm{PSD} + \eta^2_{\mathrm{filter},j}\left(\nu\right)\mathrm{PSD}^2 + \frac{4\Delta_\mathrm{Al}}{\eta_\mathrm{pb}}\eta_{\mathrm{filter},j}\left(\nu\right)\mathrm{PSD}d\nu
+\mathrm{NEP}_{\tau=0.5\mathrm{s},j}=2\int_0^\infty h\nu\eta\left(\nu,j\right)\mathrm{PSD} + \eta\left(\nu,j\right)^2\mathrm{PSD}^2 + \frac{4\Delta_\mathrm{Al}}{\eta_\mathrm{pb}}\eta\left(\nu,j\right)\mathrm{PSD}d\nu
 \end{equation}$$<p>where the three separate terms are the Poisson term, the bunching term and the recombination term respectively. Plotting this integral yields the following result:</p>
 
 </div>
@@ -489,10 +489,10 @@ if (outputEl) {{
 </h3>
 <p>As we have seen the old approximation overestimated the bunching term by a factor of $\pi/2$. For a constant $\mathrm{PSD}$ The bunching term is given by</p>
 $$\begin{equation}
-\mathrm{NEP}_{\tau=0.5\mathrm{s},j,\mathrm{bunching}}=2\mathrm{PSD}^2\int_0^\infty\eta^2_{\mathrm{filter},j}\left(\nu\right)d\nu=\frac{16}{\pi}\mathrm{PSD}^2\eta_\mathrm{circuit}^2\gamma=\frac{8}{\pi}\mathrm{PSD}^2\eta_\mathrm{circuit}^2\mathrm{FWHM}
+\mathrm{NEP}_{\tau=0.5\mathrm{s},j,\mathrm{bunching}}=\frac{8}{\pi}\mathrm{PSD}^2\eta_0^2\mathrm{FWHM}
 \end{equation}$$<p>Whereas the old model this was given by</p>
 $$\begin{equation}
-\mathrm{NEP}_{\tau=0.5\mathrm{s},j,\mathrm{bunching}}=4\mathrm{PSD}^2\eta_\mathrm{circuit}^2\mathrm{FWHM}
+\mathrm{NEP}_{\tau=0.5\mathrm{s},j,\mathrm{bunching}}=4\mathrm{PSD}^2\eta_0^2\mathrm{FWHM}
 \end{equation}$$<p>We can verify this in the following figure, where I have divided the old model by the new model. From our calculations, this should be on average $\pi/2$</p>
 
 </div>
