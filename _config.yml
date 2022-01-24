@@ -46,6 +46,9 @@ use_plotly : true
 use_katex: false
 use_mathjax: true
 
+# Set this to true to number figure labels. Figures are labelled with <strong><em> Text </strong></em>, or ***text*** in markdown
+number_figures: true
+
 # Set this to true to display the summary of your blog post under your title on the Home page.
 show_description: true
 
