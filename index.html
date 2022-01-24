@@ -85,6 +85,19 @@
 
 
 
+<style>
+    body {
+        counter-reset: figCounter;
+    }    
+    strong em{
+        font-weight: normal !important;
+    }
+    strong em:before {
+        counter-increment: figCounter;
+        content: "Figure " counter(figCounter) ". ";
+    }
+</style>
+
 
 
 
