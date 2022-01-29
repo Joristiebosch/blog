@@ -11,16 +11,12 @@ in Applied Physics at the Delft University of Technology.
 ## Supervisor
 #### **Dr. A. Endo**
 
-* THz Sensing group Deparment of Microelectronics
-
-  Faculty of Electrical Engineering, Mathematics and Computer Science
-  
+* THz Sensing group Deparment of Microelectronics\
+  Faculty of Electrical Engineering, Mathematics and Computer Science\
   Delft University of Technology
 
-* Kavli Institute of Nanoscience
-
-  Faculty of Applied Sciences
-  
+* Kavli Institute of Nanoscience\
+  Faculty of Applied Sciences\
   Delft University of Technology
 
 ## Thesis committee
@@ -28,26 +24,20 @@ in Applied Physics at the Delft University of Technology.
 
 * SRON Netherlands Institute for Space Research
 
-* THz Sensing group Deparment of Microelectronics
-
-  Faculty of Electrical Engineering, Mathematics and Computer Science
-  
+* THz Sensing group Deparment of Microelectronics\
+  Faculty of Electrical Engineering, Mathematics and Computer Science\  
   Delft University of Technology
 
 #### **Prof. Dr. A.F. Otte**
 
-* Kavli Institute of Nanoscience
-
-  Faculty of Applied Sciences
-  
+* Kavli Institute of Nanoscience\
+  Faculty of Applied Sciences\  
   Delft University of Technology
 
 #### **Dr. M Rybak**
 
-* THz Sensing group Deparment of Microelectronics
-
-  Faculty of Electrical Engineering, Mathematics and Computer Science
-  
+* THz Sensing group Deparment of Microelectronics\
+  Faculty of Electrical Engineering, Mathematics and Computer Science\  
   Delft University of Technology
 
 A copy of this thesis is available at [repository.tudelft.nl](http://repository.tudelft.nl/)
