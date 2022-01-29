@@ -98,8 +98,6 @@
   
 
   
-
-  
   
 
   
@@ -109,7 +107,7 @@
   
 
   
-      ,"page8": {
+      ,"page7": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://joristiebosch.github.io/thesis/robots.txt",
