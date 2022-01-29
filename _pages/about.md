@@ -31,7 +31,7 @@ in Applied Physics at the Delft University of Technology.
 #### **Prof. Dr. A.F. Otte**
 
 * Kavli Institute of Nanoscience\
-  Faculty of Applied Sciences\  
+  Faculty of Applied Sciences\
   Delft University of Technology
 
 #### **Dr. M Rybak**
