@@ -27,8 +27,12 @@ def plot(df,axis_labels=('x','y','var'),hover_labels=('x','y','var'),plot_type='
     
     if e_notation[0]:
         fig.update_layout(xaxis={'tickformat':'.2e'})
+    else:
+        fig.update_layout(xaxis={'exponentformat':'SI'})
     if e_notation[1]:
         fig.update_layout(yaxis={'tickformat':'.2e'})
+    else:
+        fig.update_layout(yaxis={'exponentformat':'SI'})
     
     if x_range!=None:
         fig.update_xaxes(range=x_range)
@@ -59,7 +63,7 @@ def filter_plot(spectral_df,  filters_df, mode='',x_axis_range=None,y_axis_range
     fig2.update_traces(fill='tozeroy')
     
     for trace in fig2.data:
-        trace['hovertemplate']= '<b>Bin: '+trace['name']+'</b><br>nu: %{x}<br>eta: %{y}<br><extra></extra>'
+        trace['hovertemplate']= '<b>Bin: '+trace['name']+'</b><br>nu [GHz]: %{x}<br>transmission: %{y}<br><extra></extra>'
 
     subfig.add_traces(fig2.data)
     subfig.update_traces(secondary_y=False)
@@ -75,13 +79,13 @@ def filter_plot(spectral_df,  filters_df, mode='',x_axis_range=None,y_axis_range
                          marker={'size':8},
                          error_y=error_y_spectrum,
                          secondary_y=True,
-                         hovertemplate='<b>'+spectrum_title+'</b><br>Frequency [GHz]: %{x}<br>Spectral Power: %{y}<extra></extra>')
+                         hovertemplate='<b>'+spectrum_title+'</b><br>Frequency [GHz]: %{x}<br>Spectral Power [Jy]: %{y}<extra></extra>')
     
     subfig.layout.xaxis.title="$\\nu\:\mathrm{[GHz]}$"
     subfig.layout.yaxis2.title="$E_{e,\\nu}\:\mathrm{[Jy]}$"
 
     subfig.layout.yaxis2.range=y_axis_range
-    subfig.layout.yaxis1.range=[0,1]
+    subfig.layout.yaxis1.range=[0.01,1]
     if x_axis_range != None:
         subfig.layout.xaxis.range=x_axis_range
     
@@ -95,7 +99,7 @@ def filter_plot(spectral_df,  filters_df, mode='',x_axis_range=None,y_axis_range
 
     subfig.show()
    
-def psd_overlay(data, psd_underlay,var_axis='var',var_hover='var',x_axis_range=None,y_axis_range=None,overlay_title='PSD at KID', show_legend_underlay=True):       
+def psd_overlay(data, psd_underlay,var_axis='var',var_hover='var',x_axis_range=None,y_axis_range=None,overlay_title='PSD at KID',y_type="log", show_legend_underlay=True):       
     subfig = make_subplots(specs=[[{"secondary_y": True}]])
     
     # Add psd plot
@@ -139,6 +143,10 @@ def psd_overlay(data, psd_underlay,var_axis='var',var_hover='var',x_axis_range=N
     subfig.layout.yaxis2.side='left'
     subfig.layout.yaxis1.side='right'
     #subfig.layout.yaxis1.showticklabels=False
+    
+    subfig.layout.yaxis1.type=y_type
+    subfig.layout.yaxis2.type=y_type
+
     
     # Set axis range
     if y_axis_range is not None:
