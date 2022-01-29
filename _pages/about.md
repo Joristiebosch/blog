@@ -12,13 +12,13 @@ in Applied Physics at the Delft University of Technology.
 #### **Dr. A. Endo**
 
 * THz Sensing group Deparment of Microelectronics
-* 
+
   Faculty of Electrical Engineering, Mathematics and Computer Science
   
   Delft University of Technology
 
 * Kavli Institute of Nanoscience
-* 
+
   Faculty of Applied Sciences
   
   Delft University of Technology
@@ -29,7 +29,7 @@ in Applied Physics at the Delft University of Technology.
 * SRON Netherlands Institute for Space Research
 
 * THz Sensing group Deparment of Microelectronics
-* 
+
   Faculty of Electrical Engineering, Mathematics and Computer Science
   
   Delft University of Technology
@@ -37,7 +37,7 @@ in Applied Physics at the Delft University of Technology.
 #### **Prof. Dr. A.F. Otte**
 
 * Kavli Institute of Nanoscience
-* 
+
   Faculty of Applied Sciences
   
   Delft University of Technology
