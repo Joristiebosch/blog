@@ -139,3 +139,5 @@ exclude:
 # Set bibliography style to IEEE
 scholar:
     style: ieee-with-url
+    sort_by: year,month
+    order: ascending,ascending
