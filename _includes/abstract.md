@@ -17,7 +17,7 @@ $$\begin{equation}
 \mathrm{NEP}_{\tau} = \frac{1}{\sqrt{2\tau}}\mathrm{NEP}_{\tau=0.5\mathrm{s}}
 \end{equation}$$
 
-This will however only hold while the integration time is much bigger than the coherence time $\tau\gg t_\mathrm{coh}$. Because of the correlation between multiple arriving photons shorter than a coherence time apart, the $\mathrm{NEP}_{\tau}$ drops in cases when $\tau\not\gg t_\mathrm{coh}$.
+This will however only hold while the integration time is much bigger than the coherence time $\tau\gg t_\mathrm{coh}$. Because of the correlation between multiple arriving photons shorter than a coherence time apart, the $\mathrm{NEP}\_{\tau}$ drops in cases when $\tau\not\gg t\_\mathrm{coh}$.
 
 Finally I propose and describe modifications to the sensitivity model DESHIMA uses. The following features have been be improved and added:
 
