@@ -72,9 +72,9 @@
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    TeX:		{packages: {'[+]': ['tagformat']},
-  			equationNumbers: { autoNumber: "all" },
-  			tagformat: { tag: (n) => '[1.' + n + ']'}},
+    TeX: 			{equationNumbers: { autoNumber: "all" ,
+  						    formatTag: function (n) {return '(1.'+n+')'}},
+    },
     tex2jax: 		{inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true },
     displayAlign: "center",
   });
