@@ -73,7 +73,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: 			{equationNumbers: { autoNumber: "all" ,
-  						    formatTag: function (n) {return '(1.'+n+')'}},
+  						    formatTag: function (n) {return '(.'+n+')'}},
     },
     tex2jax: 		{inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true },
     displayAlign: "center",
@@ -99,7 +99,7 @@
     }
     strong em:before {
         counter-increment: figCounter;
-        content: "Figure " counter(figCounter) ". ";
+        content: "Figure ." counter(figCounter) ". ";
     }
 </style>
 
