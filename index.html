@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Photon-bunching in ground-based submillimeter-wave astronomy" />
 <meta property="og:image" content="https://joristiebosch.github.io/thesis/images/logo.png" />
 <script type="application/ld+json">
-{"url":"https://joristiebosch.github.io/thesis/","@type":"WebSite","image":"https://joristiebosch.github.io/thesis/images/logo.png","headline":"Photon-bunching in ground-based submillimeter-wave astronomy","name":"Photon-bunching in ground-based submillimeter-wave astronomy","description":"A TU Delft Applied Physics Bachelor thesis.","@context":"https://schema.org"}</script>
+{"url":"https://joristiebosch.github.io/thesis/","@type":"WebSite","headline":"Photon-bunching in ground-based submillimeter-wave astronomy","image":"https://joristiebosch.github.io/thesis/images/logo.png","name":"Photon-bunching in ground-based submillimeter-wave astronomy","description":"A TU Delft Applied Physics Bachelor thesis.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/thesis/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://joristiebosch.github.io/thesis/feed.xml" title="Photon-bunching in ground-based submillimeter-wave astronomy" />
 
@@ -166,10 +166,12 @@ window.onload = wrap_img;
         <div class="home"><div class="post-content e-content">
   <p><img src="/thesis/images/front_page.png" alt="Looking into the past" /></p>
 
-<h1 id="abstract">Abstract</h1>
-<p>In order to investigate the forming of galaxies, astronomers look back in time using (sub)-mm astronomy. DESHIMA (the Deep Spectroscopic High-Redshift Mapper) is a 347 channel superconducting spectrometer with spectral resolution $R=\frac{\nu}{\Delta\nu}=500$ that operates in the range of $220 \mathrm{GHz}$ to $440 \mathrm{GHz}$ and can therefore accurately measure the frequency of spectral lines in order to calculate redshift $z$.</p>
+<p><strong><em>Looking back into history through redshift. The DESHIMA spectrometer is mainly interested in the reionization era of the universe. Image taken from <a class="citation" href="#ast_alma">[1]</a></em></strong></p>
 
-<p>This report investigates the sensitivity of DESHIMA-like spectrometers by investigating photon noise due to Poisson and bunching effects. It gives a broad overview of photon statistics and explains, through an analogous model, that photon bunching occurs due to an underlying change in the probabilistics, rather than the act of detecting itself. After that I investigate photon and recombination noise for a DESHIMA-like spectrometer with Lorentzian filters and find a closed form equation for Noise Equivalent Power per channel for a constant power spectral density</p>
+<h1 id="abstract">Abstract</h1>
+<p>In order to investigate the forming of galaxies, astronomers look back in time using (sub)-mm observations. DESHIMA (the Deep Spectroscopic High-Redshift Mapper) is a 347 channel superconducting spectrometer with spectral resolution $R=\frac{\nu}{\Delta\nu}=500$ that operates in the range of $220:\mathrm{GHz}$ to $440:\mathrm{GHz}$ and can therefore accurately measure the frequency of spectral lines in order to calculate redshift $z$.</p>
+
+<p>This report investigates the sensitivity of DESHIMA-like spectrometers by investigating photon noise due to Poisson and bunching effects. It gives a broad overview of photon statistics and explains, through an analogous model, that photon bunching occurs due to an underlying change in the probabilistics, rather than the act of detecting itself. After that I investigate photon and quasiparticle recombination noise for a DESHIMA-like spectrometer with Lorentzian filters and find a closed form equation for Noise Equivalent Power per channel for a constant power spectral density arriving at the filters.</p>
 
 <div class="kdmath">$$
 \begin{equation}
@@ -177,22 +179,34 @@ window.onload = wrap_img;
 \end{equation}
 $$</div>
 
-<p>where $\eta$ is $\pi/4$ times the peak hight of the Lorentzian, the average transmission over the $\mathrm{FWHM}$ of the Lorentzian. The bunching is a factor of $\pi/2$ smaller than previously approximated.</p>
+<p>where $\eta$ is $\pi/4$ times the peak hight of the Lorentzian, the average transmission over the $\mathrm{FWHM}$ of the Lorentzian. Previously the bandwidth of the filters was assumed to be negligible, resulting in an overestimation of the bunching. Because the photons that are impinging on the detector span a bigger bandwidth, the bunching is a factor of $\pi/2$ smaller than previously approximated.</p>
 
-<p>Finally I propose and describe modifications to the sensitivity model DESHIMA uses. The following features will be improved and added:</p>
+<p>This $\mathrm{NEP}_{\tau}$ is defined at an integration time of $\tau=0.5:s$. For other integration times this is scalable  through:</p>
+
+<div class="kdmath">$$
+\begin{equation}
+\mathrm{NEP}_{\tau} = \frac{1}{\sqrt{2\tau}}\mathrm{NEP}_{\tau=0.5\mathrm{s}}
+\end{equation}
+$$</div>
+
+<p>This will however only hold while the integration time is much bigger than the coherence time $\tau\gg t_\mathrm{coh}$. Because of the correlation between multiple arriving photons shorter than a coherence time apart, the $\mathrm{NEP}<em>{\tau}$ drops in cases when $\tau\not\gg t</em>\mathrm{coh}$.</p>
+
+<p>Finally I propose and describe modifications to the sensitivity model DESHIMA uses. The following features have been be improved and added:</p>
 
 <h3 id="integrate-over-the-entire-power-spectrum-when-calculating-photon-noise">Integrate over the entire power spectrum when calculating photon noise</h3>
-<p>I use an integral expression for photon noise found in the literature and integrate over it using a Riemann sum to calculate the photon noise per channel. This improves accuracy, in particular in local extrema where the loading of the side bands smooths out the $\mathrm{PSD}$ at the center frequency.</p>
+<p>I use an integral expression for photon noise found in the literature and integrate over it using a Riemann sum to calculate the photon noise per channel. This improves accuracy, in particular in local extrema, for example at frequencies close to the emission lines of water and oxygen, where the loading of the side bands smooths out the $\mathrm{PSD}$ at the center frequency.</p>
 
 <h3 id="use-arbritatry-filter-designs-loaded-from-a-file">Use arbritatry filter designs loaded from a file</h3>
-<p>I design the modifications in such a way that an arbitrary filtershape can be loaded in and the sensitivity can be calculated from it. This is important when comparing filter designs, as it was previously challenging to calculate the noise equivalent power for these arbitrary filter shapes in order to calculate the signal to noise ratio.</p>
+<p>I design the modifications in such a way that an arbitrary filtershape can be loaded in and the sensitivity can be calculated from it. These can include lab measurement and simulations based on the full circuit model, both varying wildly from perfect Lorentzians. This enables a more robust estimation of the instrument performance on sky.</p>
 
 <h3 id="improve-estimations-of-the-quantities-that-express-sensitivity">Improve estimations of the quantities that express sensitivity</h3>
-<p>Finally I will transform the calculated $\mathrm{NEP}$ to quantities like minimal detectable line flux ($\mathrm{MDLF}$) and noise equivalent flux density ($\mathrm{NEFD}$) to show the sensitivity of the system in an astronomical measurement. This was previously done by approximating the $\mathrm{PSD}$ as flat over the filter channel, but I will improve on this by taking the entire range of the filter into account for continuum sources.</p>
+<p>Finally I will transform the calculated $\mathrm{NEP}$ to quantities like minimal detectable line flux ($\mathrm{MDLF}$) and noise equivalent flux density ($\mathrm{NEFD}$) to show the sensitivity of the system in an astronomical measurement. This was previously done by approximating the $\mathrm{PSD}$ as flat over the filter channel, but I have improved on this by taking the entire range of the filter into account for continuum sources. For calculating the sensitivity of line emissions the $\mathrm{NEP}$ can be compared to frequency-integrated signal power at the detector, to be calculated separately. A</p>
 
-<p>I will compare the proposed modifications to the old model, which was compared with measurement results, and use it to validate the changes. Other than the previously mentioned factor of $\pi/2$ for the bunching term and the smoothing out in local extrema, the changes behave similarly to the old model.</p>
+<p>I compare the proposed modifications to the old model, which was compared with measurement results, and use it to validate the changes. Other than the previously mentioned factor of $\pi/2$ for the bunching term and the smoothing out in local extrema, the modified simulation results are similar to the old model. This is because the Lorentzian filters have a small bandwidth $\nu\gg\Delta\nu$, such that the previous narrowband approximation held for most non-extreme cases.</p>
 
-<p>The figures in this thesis are interactive. That means that you can drag a square to zoom, toggle traces and hover over traces to see the data.</p>
+<p>The figures in this thesis are interactive. That means that you can drag over an area to zoom as well as toggle traces on and off and hover over them to inspect the data.</p>
+
+<ol class="bibliography"><li><span id="ast_alma">[1]D. R. Wilkins and S. J. Crass, “Institute of Astronomy,” <i>ALMA detects the most distant oxygen ever | Institute of Astronomy</i>. University of Cambridge, Jun-2016 [Online]. Available at: https://www.ast.cam.ac.uk/content/alma.detects.most.distant.oxygen.ever</span></li></ol>
 
   </div>
 

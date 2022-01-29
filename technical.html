@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-10-10T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-10-10T00:00:00-05:00","url":"https://joristiebosch.github.io/thesis/technical","@type":"BlogPosting","dateModified":"2021-10-10T00:00:00-05:00","image":"https://joristiebosch.github.io/thesis/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://joristiebosch.github.io/thesis/technical"},"headline":"Technical information on how this blog is made","description":"Using Fastpages and Github Pages to host interactive Jupyter Notebooks in blog format","@context":"https://schema.org"}</script>
+{"url":"https://joristiebosch.github.io/thesis/technical","@type":"BlogPosting","headline":"Technical information on how this blog is made","dateModified":"2021-10-10T00:00:00-05:00","datePublished":"2021-10-10T00:00:00-05:00","image":"https://joristiebosch.github.io/thesis/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://joristiebosch.github.io/thesis/technical"},"description":"Using Fastpages and Github Pages to host interactive Jupyter Notebooks in blog format","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/thesis/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://joristiebosch.github.io/thesis/feed.xml" title="Photon-bunching in ground-based submillimeter-wave astronomy" />
 
@@ -225,7 +225,7 @@ window.onload = wrap_img;
 <h1 id="Introduction">
 <a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
 </h1>
-<p>This blog is written using <a href="https://github.com/fastai/fastpages">fastpages</a><a class="citation" href="#fastpages_introduction">[1]</a>, an easy-to-use (and to setup) way to convert Jupyter Notebooks to blogs, which are automatically hosted on a Github Pages website. This post serves as an introduction for potential users, as a way for me to test some things and as a reference for some more obscure parts of the Fastpages process. Let's begin!</p>
+<p>This blog is written using <a href="https://github.com/fastai/fastpages">fastpages</a>(missing reference), an easy-to-use (and to setup) way to convert Jupyter Notebooks to blogs, which are automatically hosted on a Github Pages website. This post serves as an introduction for potential users, as a way for me to test some things and as a reference for some more obscure parts of the Fastpages process. Let's begin!</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ window.onload = wrap_img;
 <pre><code>$$
 Complicated math
 $$</code></pre>
-<p>will not be numbered and is not referenceable. Thankfully Anthoine C.<a class="citation" href="#math_with_fastpages">[2]</a> gave the solution, which is to override the default mathrenderer with a couple of lines of code and that seemed to do the trick.</p>
+<p>will not be numbered and is not referenceable. Thankfully Anthoine C.(missing reference) gave the solution, which is to override the default mathrenderer with a couple of lines of code and that seemed to do the trick.</p>
 <p>$$\begin{equation}
 i\hbar\frac{\partial\mathbf{\Psi}(x,t)}{\partial t}=\left(-\frac{\hbar}{2m}\frac{\partial^2}{\partial x^2}+V(x,t)\right)\mathbf{\Psi}(x,t) 
  \end{equation}$$
@@ -280,7 +280,7 @@ I = \begin{pmatrix}1&amp;0&amp;0&amp;0 \\ 0&amp;1&amp;0&amp;0 \\ 0&amp;0&amp;1&a
 <h2 id="BibTex">
 <a class="anchor" href="#BibTex" aria-hidden="true"><span class="octicon octicon-link"></span></a>BibTex<a class="anchor-link" href="#BibTex"> </a>
 </h2>
-<p>Fastpages has a built-in way to handle in-text references, but in order to minimize the manual work in copy-pasting sections of notebook to blog to thesis, I have decided to swap it out for a BibTex compliant renderer, as described by the fastpages team <a class="citation" href="#bibtex_with_fastpages">[3]</a>. As you can see from this post, this works well. The big advantage is that the entire website uses a single <code>references.bib</code> file, so I can cite the same reference across multiple posts and end up with a single reference file when I want to consolidate multiple posts in a $\LaTeX$ thesis or a single post.</p>
+<p>Fastpages has a built-in way to handle in-text references, but in order to minimize the manual work in copy-pasting sections of notebook to blog to thesis, I have decided to swap it out for a BibTex compliant renderer, as described by the fastpages team (missing reference). As you can see from this post, this works well. The big advantage is that the entire website uses a single <code>references.bib</code> file, so I can cite the same reference across multiple posts and end up with a single reference file when I want to consolidate multiple posts in a $\LaTeX$ thesis or a single post.</p>
 <p>One caveat in in-text refencing is the usual <code>\[&lt;a class="latex_cit" id="call-&lt;source&gt;" href="#cit-&lt;source&gt;"&gt;&lt;source&gt;&lt;/a&gt;]</code> doesn't work and <code>{% cite &lt;source&gt; %}</code> is needed instead. This can be changed in bulk using the find and replace feature of any editor however.</p>
 
 </div>
@@ -293,11 +293,7 @@ I = \begin{pmatrix}1&amp;0&amp;0&amp;0 \\ 0&amp;1&amp;0&amp;0 \\ 0&amp;0&amp;1&a
 <a class="anchor" href="#Bibliography" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bibliography<a class="anchor-link" href="#Bibliography"> </a>
 </h1>
 <p></p>
-<ol class="bibliography">
-<li><span id="fastpages_introduction">[1]H. Husain and J. Howard, “Introducing fastpages,” <i>fastpages</i>. fast.ai, Feb-2020 [Online]. Available at: https://fastpages.fast.ai/fastpages/jupyter/2020/02/21/introducing-fastpages.html</span></li>
-<li><span id="math_with_fastpages">[2]A. C., “Consider setting use_math to true by default,” <i>fast.ai Forums</i>. fast.ai, Apr-2020 [Online]. Available at: https://forums.fast.ai/t/consider-setting-use-math-to-true-by-default/64276/6</span></li>
-<li><span id="bibtex_with_fastpages">[3]“Citations in Fastpages via BibTeX and jekyll-scholar,” <i>fastpages</i>. fast.ai, Jul-2020 [Online]. Available at: https://drscotthawley.github.io/devblog4/2020/07/01/Citations-Via-Bibtex.html</span></li>
-</ol>
+<ol class="bibliography"></ol>
 
 </div>
 </div>

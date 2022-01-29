@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-01-02T00:00:00-06:00" />
 <script type="application/ld+json">
-{"datePublished":"2022-01-02T00:00:00-06:00","url":"https://joristiebosch.github.io/thesis/conclusion","@type":"BlogPosting","dateModified":"2022-01-02T00:00:00-06:00","image":"https://joristiebosch.github.io/thesis/images/conclusion.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://joristiebosch.github.io/thesis/conclusion"},"headline":"Conclusion","description":"Concluding the research","@context":"https://schema.org"}</script>
+{"url":"https://joristiebosch.github.io/thesis/conclusion","@type":"BlogPosting","headline":"Conclusion","dateModified":"2022-01-02T00:00:00-06:00","datePublished":"2022-01-02T00:00:00-06:00","image":"https://joristiebosch.github.io/thesis/images/conclusion.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://joristiebosch.github.io/thesis/conclusion"},"description":"Concluding the research","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/thesis/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://joristiebosch.github.io/thesis/feed.xml" title="Photon-bunching in ground-based submillimeter-wave astronomy" />
 
@@ -73,7 +73,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: 			{equationNumbers: { autoNumber: "all" ,
-  						    formatTag: function (n) {return '(1.'+n+')'}},
+  						    formatTag: function (n) {return '(7.'+n+')'}},
     },
     tex2jax: 		{inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true },
     displayAlign: "center",
@@ -99,7 +99,7 @@
     }
     strong em:before {
         counter-increment: figCounter;
-        content: "Figure 1." counter(figCounter) ". ";
+        content: "Figure 7." counter(figCounter) ". ";
     }
 </style>
 
@@ -174,7 +174,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -218,7 +218,11 @@ $$\begin{equation}
 \end{equation}$$<p>this approximation overestimates the photon bunching effects for a filter $\eta\left(\nu\right)$ with a Lorentzian shape. I have shown that, in the case of a Lorentzian filter and a flat $\mathrm{PSD}$, eq. \eqref{NEP_int} collapses to</p>
 $$\begin{equation}
 \mathrm{NEP}_{\tau,\mathrm{ph}}^2=\frac{1}{\tau}\left(h\nu\eta_0\mathrm{PSD}\Delta\nu+\frac{2}{\pi}\eta_0^2\mathrm{PSD}^2\Delta\nu\right)
-\end{equation}$$<p>with $\Delta\nu$ the $\mathrm{FWHM}$ of the filter.</p>
+\end{equation}$$<p>with $\Delta\nu$ the $\mathrm{FWHM}$ of the filter. This factor of $\pi/2$ is explained by the width of the Lorentzian filter. Previously the bandwidth of the filters was assumed to be negligible, resulting in an overestimation of the bunching. Because the photons that are impinging on the detector span a bigger bandwidth they bunch less.</p>
+<p>The definition for the noise equivalent power $\mathrm{NEP}_{\tau=0.5s}$ means that it is defined at an integration time of $\tau=0.5\:s$. For different integration times the $\mathrm{NEP}_\tau$ is defined as:</p>
+$$\begin{equation}
+\mathrm{NEP}_{\tau} = \frac{1}{\sqrt{2\tau}}\mathrm{NEP}_{\tau=0.5\mathrm{s}}
+\end{equation}$$<p>However, this assumes that the integration time is much bigger than the coherence time of the detected photons $\tau\gg t_\mathrm{coh}$. Due to correlation of photons within the coherence time the $\mathrm{NEP}_{\tau}$ drops when the integration time approaches and subceeds the coherence time.</p>
 
 </div>
 </div>
@@ -227,7 +231,7 @@ $$\begin{equation}
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Besides this algebraic result for a Lorentzian filter I have also modified the existing <code>deshima-sensitivity</code><a class="citation" href="#deshima-sensitivity">[3]</a> model to calculate the integral in eq. \eqref{NEP_int} not just for mathematical filters, but for arbitrary filter shapes loaded in via a file. This allows researchers to compare the sensitivity of various designs in software.</p>
-<p>To verify the changes to the model I have compared it with the old model and confirmed that the latter overestimated the bunching noise by a factor of $\pi/2$ , even for a non-flat $\mathrm{PSD}$. Other than this, the changes affect the power and noise in local extrema of the $\mathrm{PSD}$, where the old model didn't integrate over the full range of the filter and therefore took the $\mathrm{PSD}$ as a flat spectrum locally.</p>
+<p>To verify the changes to the model I have compared it with the old model and confirmed that in the case of perfect Lorentzian filter the latter overestimated the bunching noise by a factor of $\pi/2$ , even on average for a non-flat $\mathrm{PSD}$. Other than this, the changes affect the power and noise in local extrema of the $\mathrm{PSD}$, where the old model didn't integrate over the full range of the filter and therefore took the $\mathrm{PSD}$ as a flat spectrum locally.</p>
 
 </div>
 </div>
