@@ -69,6 +69,14 @@ exclude:
   - action.yml
   - Makefile
 
+# Set default variables
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      sectionnr: 1
+
 # this setting allows you to keep pages organized in the _pages folder
 include:
   - _pages
