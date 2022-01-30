@@ -34,7 +34,7 @@ in Applied Physics at the Delft University of Technology.
   Faculty of Applied Sciences\
   Delft University of Technology
 
-#### **Dr. M Rybak**
+#### **Dr. M. Rybak**
 
 * THz Sensing group Deparment of Microelectronics\
   Faculty of Electrical Engineering, Mathematics and Computer Science\  
