@@ -1136,7 +1136,7 @@ $$\begin{equation}
 <h2 id="Generation-Recombination-Noise">
 <a class="anchor" href="#Generation-Recombination-Noise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generation-Recombination Noise<a class="anchor-link" href="#Generation-Recombination-Noise"> </a>
 </h2>
-<p>Besides photon noise (both Poisson and bunching), another type of noise adds to our $\mathrm{NEP}$: recombination noise. This is a type of noise that occurs in superconductor-based pair-breaking photon detectors. As mentioned before, incoming photons generate quasiparticles in the detector, which later recombine in a Cooper pair (missing reference). For our purposes we will take the noise equivalent power of recombination noise $\mathrm{NEP&lt;/em&gt;{\tau,R}}$ as given by <a class="citation" href="#endo_2019">[13]</a>:</p>
+<p>Besides photon noise (both Poisson and bunching), another type of noise adds to our $\mathrm{NEP}$: recombination noise. This is a type of noise that occurs in superconductor-based pair-breaking photon detectors. As mentioned before, incoming photons generate quasiparticles in the detector, which later recombine in a Cooper pair <a class="citation" href="#visser_2014">[14]</a>. For our purposes we will take the noise equivalent power of recombination noise $\mathrm{NEP_{\tau,R}}$ as given by <a class="citation" href="#endo_2019">[13]</a>:</p>
 $$\begin{equation}
 \mathrm{NEP_{\tau,R}}=\frac{1}{\sqrt{\tau}}\sqrt{2\Delta_\mathrm{Al}\frac{P_\mathrm{KID}}{\eta_\mathrm{pb}}}
 \end{equation}$$<p>Even though the amount of quasiparticles generated is proportional to the incoming power, the recombination noise happens randomly and is therefore an uncorrelated process. This means we can add the $\mathrm{NEP_R}$ and $\mathrm{NEP_{ph}}$ together by quadrature addition, creating a total noise equivalent power given by:</p>
@@ -1144,7 +1144,7 @@ $$\begin{equation}
 \mathrm{NEP}_{\tau=0.5\mathrm{s}} = \sqrt{\mathrm{NEP}_{\tau=0.5\mathrm{s},\mathrm{ph}}^2 + \mathrm{NEP_{\tau=0.5s,R}}^2}
 \end{equation}$$$$\begin{equation}
 \mathrm{NEP}_{\tau=0.5\mathrm{s}}=\sqrt{2P_\mathrm{KID}h\nu_0 + 2\frac{P_\mathrm{KID}^2}{\Delta\nu}+4\Delta_\mathrm{Al}\frac{P_\mathrm{KID}}{\eta_\mathrm{pb}}}
-\end{equation}$$<p>Finally, quasiparticles also generate randomly without any incoming photons, eg when the detector is kept in total darkness<a class="citation" href="#visser_2014_2">[14]</a>. This is called <em>Generation-Recombination noise</em> and is negligible compared to the photon noise and photon-induced recombination noise as can be seen in the figure below:</p>
+\end{equation}$$<p>Finally, quasiparticles also generate randomly without any incoming photons, eg when the detector is kept in total darkness<a class="citation" href="#visser_2014_2">[15]</a>. This is called <em>Generation-Recombination noise</em> and is negligible compared to the photon noise and photon-induced recombination noise as can be seen in the figure below:</p>
 
 </div>
 </div>
@@ -1153,7 +1153,7 @@ $$\begin{equation}
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/thesis/images/copied_from_nb/images/recombination_noise.png" alt="Generation-Recombination noise compared to photon noise">
-<strong><em>The noise induced by spontaneous Generation and recombination of quasiparticles is negligible compared to photon noise. Image taken from <a class="citation" href="#visser_2014_2">[14]</a></em></strong></p>
+<strong><em>The noise induced by spontaneous Generation and recombination of quasiparticles is negligible compared to photon noise. Image taken from <a class="citation" href="#visser_2014_2">[15]</a></em></strong></p>
 
 </div>
 </div>
@@ -1202,7 +1202,8 @@ $$\begin{equation}
 <li><span id="richards_1994">[11]P. L. Richards, “Bolometers for infrared and millimeter waves,” <i>Journal of Applied Physics</i>, vol. 76, no. 1, pp. 1–24, 1994, doi: 10.1063/1.357128. </span></li>
 <li><span id="leclercq_2007">[12]S. Leclercq, “Discussion about Noise Equivalent Power and its use for photon noise calculation,” 2007 [Online]. Available at: https://www.iram.fr/ leclercq/Reports/About_NEP_photon_noise.pdf</span></li>
 <li><span id="endo_2019">[13]A. Endo <i>et al.</i>, “First light demonstration of the integrated superconducting spectrometer,” <i>Nature Astronomy</i>, vol. 3, no. 11, pp. 989–996, 2019, doi: 10.1038/s41550-019-0850-8. </span></li>
-<li><span id="visser_2014_2">[14]P. J. D. Visser, J. J. A. Baselmans, J. Bueno, N. Llombart, and T. M. Klapwijk, “Fluctuations in the electron system of a superconductor exposed to a photon flux,” <i>Nature Communications</i>, vol. 5, no. 1, 2014, doi: 10.1038/ncomms4130. </span></li>
+<li><span id="visser_2014">[14]P. J. de Visser, “Quasiparticle dynamics in aluminium superconducting microwave resonators,” Mar. 2014, doi: 10.4233/uuid:eae4c9fc-f90d-4c12-a878-8428ee4adb4c. </span></li>
+<li><span id="visser_2014_2">[15]P. J. D. Visser, J. J. A. Baselmans, J. Bueno, N. Llombart, and T. M. Klapwijk, “Fluctuations in the electron system of a superconductor exposed to a photon flux,” <i>Nature Communications</i>, vol. 5, no. 1, 2014, doi: 10.1038/ncomms4130. </span></li>
 </ol>
 
 </div>
