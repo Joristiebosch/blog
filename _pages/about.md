@@ -15,12 +15,8 @@ in Applied Physics at the Delft University of Technology.
   Faculty of Electrical Engineering, Mathematics and Computer Science\
   Delft University of Technology
 
-* Kavli Institute of Nanoscience\
-  Faculty of Applied Sciences\
-  Delft University of Technology
-
 ## Thesis committee
-#### **Prof. Dr. J. Baselmans**
+#### **Prof. Dr. J.J.A. Baselmans**
 
 * SRON Netherlands Institute for Space Research
 
